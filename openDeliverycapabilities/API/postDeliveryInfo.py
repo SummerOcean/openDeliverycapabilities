@@ -1,7 +1,7 @@
 import requests, json, time, random
 
 
-def openDeliveryAuth(businessId,previewFeeOrderNo,**kwargs):
+def postDeliveryInfo(businessId,previewFeeOrderNo,**kwargs):
     url = "http://fds-gateway.fds-qc.can-dao.com/fds-web/fds/dispatch"
     json = {
         "accessKey": "aed579eaa90710f7",
@@ -63,3 +63,6 @@ def openDeliveryAuth(businessId,previewFeeOrderNo,**kwargs):
             "subStoreId": "177747"
         }
     }
+    res=requests.post(url=url,json=json,verify=False)
+    print(res.text)
+    return res
