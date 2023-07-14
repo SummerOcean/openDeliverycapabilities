@@ -17,14 +17,13 @@ def test_postDelivery():
     "获取出预览费用的编号"
     previewFeeOrderNo = p_d.json()['data']['previewFeeOrderNo']
     print('预览费用编号：' + previewFeeOrderNo)
+    '''    '''
 
-
-    '''2、下单'''
+    '''2、下单呼叫'''
     p_d_i=postDeliveryInfo(businessId,previewFeeOrderNo)
     '''断言'''
     assert p_d_i.json()['status'] == 1
     d_o=p_d_i.json()['data']['deliveryOrderId']
-
     print('配送单号：%d' %d_o)
 
 
