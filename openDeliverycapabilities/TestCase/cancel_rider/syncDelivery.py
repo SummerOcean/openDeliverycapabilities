@@ -1,6 +1,5 @@
 import time
-from API.getPreview import previewDeliveryFe
-from  API.postDeliveryFds import postDeliveryFdsInfo
+from API.postDeliveryInfo.postDeliveryFds import postDeliveryFdsInfo
 from API.syncOrder import syncDeliveryStatus
 
 def test_syncDeliveryStatus():
@@ -12,6 +11,7 @@ def test_syncDeliveryStatus():
     assert p_d_i.json()['status'] == 1
     d_o=p_d_i.json()['data']['deliveryOrderId']
     print('配送单号：%d' %d_o)
+
 
 
 

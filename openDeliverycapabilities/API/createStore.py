@@ -13,7 +13,7 @@ def cerate_deliveryStore(storeName,**kwargs):
         "data": {
             "operationType": "add",
             "brandId": "4683",
-            "subStoreId": "int(time.time())",
+            "subStoreId": int(time.time()),
             "phone": "18584853382",
             "name": "eden1",
             "storeName": storeName,
@@ -37,7 +37,7 @@ def cerate_deliveryStore(storeName,**kwargs):
     print(res.text)
     return res
 
-if __name__=='__main__':
-    cerate_deliveryStore("开放配送测试建店")
+'''if __name__=='__main__':
+    cerate_deliveryStore("开放配送测试建店")'''
 
 

@@ -1,5 +1,5 @@
 import time
-from API.getPreview import previewDeliveryFe
+from API.postDeliveryInfo.getPreview import previewDeliveryFe
 
 def test_gePreFee():
     '''获取预览配送费'''

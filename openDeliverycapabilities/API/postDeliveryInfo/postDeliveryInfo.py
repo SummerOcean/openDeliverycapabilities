@@ -1,7 +1,7 @@
 import requests, json, time, random
 
 
-def postDeliveryFdsInfo(businessId,**kwargs):
+def postDeliveryInfo(businessId,**kwargs):
     url = "http://fds-gateway.fds-qc.can-dao.com/fds-web/fds/dispatch"
     json = {
         "accessKey": "aed579eaa90710f7",
@@ -12,6 +12,7 @@ def postDeliveryFdsInfo(businessId,**kwargs):
         "serviceType": "pos",
         "vendor": "",
         "storeId": "342737",
+        "previewFeeOrderNo":previewFeeOrderNo,
         "data": {
             "storeName": "开放配送建店测试1更新信息",
             "sn": "1",

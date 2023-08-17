@@ -1,10 +1,12 @@
 import time
-from API.getPreview import previewDeliveryFe
-from  API.postDeliveryInfo import postDeliveryInfo
+from API.postDeliveryInfo.getPreview import previewDeliveryFe
+from API.postDeliveryInfo.postDeliveryInfo import postDeliveryInfo
+
 
 def test_postDelivery():
     '''1、获取预览费用和编号'''
     businessId = "fdstest" + str(int(time.time()))
+
     '''打印出订单号'''
     print("订单号:" + businessId)
 
