@@ -1,6 +1,6 @@
 import requests,json,time,random
 
-def cerate_deliveryStore(storeName,**kwargs):
+def cerate_deliveryStore(storeName,subStoreId,**kwargs):
     url="http://fds-gateway.fds-qc.can-dao.com/fds-web/fds/dispatch"
     json={
         "accessKey": "aed579eaa90710f7",
@@ -13,7 +13,7 @@ def cerate_deliveryStore(storeName,**kwargs):
         "data": {
             "operationType": "add",
             "brandId": "4683",
-            "subStoreId": int(time.time()),
+            "subStoreId": subStoreId,
             "phone": "18584853382",
             "name": "eden1",
             "storeName": storeName,
@@ -38,6 +38,6 @@ def cerate_deliveryStore(storeName,**kwargs):
     return res
 
 '''if __name__=='__main__':
-    cerate_deliveryStore("开放配送测试建店")'''
+    cerate_deliveryStore("开放配送测试建店")
 
-
+'''

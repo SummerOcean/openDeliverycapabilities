@@ -3,24 +3,22 @@ import time
 import pytest
 from jsonpath import jsonpath
 from API.createStore import cerate_deliveryStore
+from COMMON.read_yaml import read_file
+from pathlib import Path
 
 
-@pytest.mark.parametrize("storeName",["开放配送创建自动化测试门店"])
-def test_addStore(storeName):
+
+file_path = Path(__file__).parent.parent.joinpath('data', 'test_data.yml')
+print(file_path)
+test_data = read_file(file_path)
+print(test_data)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+
+@pytest.mark.parametrize("input,expected",test_data['test_add_store'])
+def test_addStore(input,expected):
     '''创建门店成功'''
-    c_as=cerate_deliveryStore(storeName)
+    c_as=cerate_deliveryStore(**input)
     print("创建门店成功"+c_as.text)
-    assert c_as.json()['status'] == 1
-    assert jsonpath(c_as.json(),'$.msg')[0]=="操作成功"
-    "取出门店id"
-    print("创建门店成功:"+c_as.text)
-
-
-
-
-
-
-
-
-
-
+    assert c_as.json()['msg']==expected['msg']
+    assert c_as.json()['status'] == expected['status']
+    #assert c_as.json()['status'] ==
+    

@@ -1,0 +1,11 @@
+
+test_add_store:
+  - - storeName: 新增门店重复
+      subStoreId: '000015'
+    - status: 1
+      msg: 操作成功
+      data: '347556'
+  - - storeName: 新增门店成功
+      subStoreId: int(time.time())
+    - status: 1
+      msg: 操作成功
